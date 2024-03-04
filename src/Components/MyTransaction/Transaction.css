@@ -1,78 +1,265 @@
-
-.transaction-container{
-    background-image: url("https://images.freeimages.com/images/large-previews/7be/sunset-1369613.jpg?fmt=webp&w=500");
-    background-position: center;
-    background-size: cover;
+.transaction-container {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/%E6%84%9B%E6%B2%B3%E8%A5%BF%E7%95%94%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%97%97%E6%B5%B7_20191006.jpg");
+  background-position: center;
+  background-size: cover;
 }
-
 
 .rolling-container {
-    max-height: 400px;
-    overflow-x: auto;
-    overflow-y: auto;
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-    
-  }
-.add-record-button{
+  max-height: 400px;
+  overflow-x: auto;
+  overflow-y: auto;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  z-index: 100; /* Set a higher z-index value */
+}
+
+.add-record-button {
   font-size: 30px;
 }
-  
-  .header-row {
-    display: flex;
-    position: sticky;
-    top: 0;
-    background-color: #ededed;
-    padding: 10px;
-    border: 1px solid #b1b0b0;
-  }
-  
-  .attribute, .data {
-    flex: 1;
-    text-align: center;
-    padding: 8px;
-    
-  }
-  
-  .trade-item {
-    display: flex;
-    padding: 10px;
-    border-bottom: 2px solid #ccc;
-    border: 1px solid #b1b0b0;
-    background-color: white;
-  }
-  
-  .trade-item .data {
-    text-align: center;
-    overflow: hidden;
+
+/* CSS for header row */
+.header-row {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #ededed;
+  border: 1px solid #b1b0b0;
+  z-index: 1; /* Ensure header stays above data rows */
+  align-items: center; /* Center items vertically */
+}
+
+/* CSS for data rows */
+.trade-item {
+  display: flex;
+  padding: 8px;
+  border-bottom: 2px solid #ccc;
+  border: 1px solid #b1b0b0;
+  background-color: white;
+  align-items: center;
+}
+
+/* Common styles for both header and data */
+
+.data {
+  flex: 1;
+  text-align: center;
+  padding: 0;
+}
+
+.attribute {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Action icons */
+.action-icons {
+  flex: 1; /* Ensure action icons take the same space */
+  text-align: center;
+  padding: 0;
+  align-items: center;
+ 
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1288px) {
+  .rolling-container {
+    overflow-x: auto;
     white-space: nowrap;
   }
 
-  
-  
-  @media screen and (max-width: 1288px) {
-    .rolling-container {
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-  
-    .trade-item {
-      width: 980px;
-      
-    }
+  .trade-item {
+    width: 950px;
+  }
 
-    .header-row {
-        width: 980px; /* 應該不能這樣設，但先不管 */
-    }
-  
-    .attribute {
-      width: 980px;  /* 應該不能這樣設，但先不管 */
-    }
+  .header-row {
+    width: 950px;
+  }
 
-    .data {
-        flex: none;
-        min-width: 120px;
-      }
-  };
+  .attribute {
+    width: 100px; /* Adjust width for smaller screens */
+  }
+
+  .data {
+    width: 100px;
+  }
+
+  .action-icons{
+    width:100px;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998; /* Set a higher z-index value */
   
+}
+
+
+.modal-content {
+  width: 90%;
+  max-width: 1500px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 999; /* Set a higher z-index value */
+}
+
+
+.close {
+  position: absolute;
+  font-size: xx-large;
+  top: 0;
+  right: 10px;
+  cursor: pointer;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-column {
+  flex: 1;
+  padding-right: 0;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.attribute {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input {
+  margin-top: 5px;
+  font-size: 15px;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  font-size: 26px;
+}
+
+@media screen and (max-width: 1100px) {
+  .modal-content {
+    padding: 2px;
+  }
+ 
+  .form-column {
+    padding-right: 0;
+    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .attribute {
+    width: auto;
+  }
+}
+
+.red-text {
+  color: rgb(180, 3, 3);
+  font-weight: bold;
+  font-size: large;
+}
+
+.green-text {
+  color: rgb(2, 131, 2);
+  font-weight: bold;
+  font-size: large;
+}
+
+.responsive-text-container {
+  display: inline-block;
+  background-color: rgba(128, 128, 128, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.responsive-text {
+  font-family: serif;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 24px;
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-box {
+  width: 500px;
+  height: 55px;
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.search-button {
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 5px;
+  background-color: #cedadb;
+  color: #232e2f;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.search-button {
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #a5b3be;
+}
+
+.transaction-heading {
+  font-size: 76px;
+}
+
+@media (max-width: 850px) {
+  .input-box {
+    width: 300px;
+    height: 40px;
+  }
+
+  .search-button {
+    height: 40px;
+    width: 80px;
+    font-size: medium;
+  }
+
+  .transaction-heading {
+    font-size: 54px;
+  }
+}

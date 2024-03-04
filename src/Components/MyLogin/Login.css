@@ -7,7 +7,7 @@ body.login-background {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background-image: url("https://digwallpapers.com/wallpapers/full/3/5/2/97049-3840x2160-rain-window-wallpaper-image-desktop-4k.jpg");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Flag_of_the_Republic_of_China.svg/255px-Flag_of_the_Republic_of_China.svg.png");
   background-position: fixed;
   background-size: cover;
 }
@@ -214,4 +214,45 @@ body.login-background {
 
 .error-message{
   color: white;
+}
+
+@media (max-width: 768px) {
+  .the-whole-login-part {
+    width: 90%; /* Adjusted width for smaller screens */
+    height: auto; /* Adjusted height to accommodate content */
+    top: 40%; /* Adjusted position from top */
+    transform: translate(-50%, -40%); /* Adjusted transform */
+  }
+
+  .log-in-title {
+    font-size: 24px; /* Adjusted font size for smaller screens */
+  }
+
+  .computerPlease {
+    font-size: 14px; /* Adjusted font size for smaller screens */
+  }
+
+  .signInText {
+    font-size: 40px; /* Adjusted font size for smaller screens */
+  }
+
+  .login-username-input input,
+  .login-password-input input {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    height: 45px; /* Adjusted height for smaller screens */
+  }
+
+  .log-in-button button {
+    font-size: 20px; /* Adjusted font size for smaller screens */
+    height: 50px; /* Adjusted height for smaller screens */
+  }
+
+  .ask-to-signup-link {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    margin-top: 20px; /* Adjusted margin for smaller screens */
+  }
+
+  .forgot-message-being-clicked {
+    width: 90%; /* Adjusted width for smaller screens */
+  }
 }

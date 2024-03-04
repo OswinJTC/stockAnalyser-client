@@ -1,7 +1,7 @@
  
 
 .home-background{
-    background-image: url("https://pluviophile.net/wp-content/uploads/wet-empty-road-wallpaper.jpg");
+    background-image: url("https://img.ltn.com.tw/Upload/news/600/2019/11/13/phpWV6s8R.jpg");
  
     background-size: cover;
     background-position: center;
@@ -92,3 +92,29 @@
     color: #697067;
   }
   
+
+  /* For screens smaller than 768px (phones), display buttons vertically */
+@media (max-width: 768px) {
+  .container-fluid .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-md-4 {
+    width: 100%; /* Make each column full width */
+    margin-bottom: 50px; /* Add some spacing between buttons */
+  }
+}
+
+/* For screens larger than 768px (computers), display buttons horizontally */
+@media (min-width: 769px) {
+  .container-fluid .row {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .col-md-4 {
+    width: auto; /* Reset width to auto for horizontal layout */
+    margin-bottom: 0; /* Reset margin */
+  }
+}

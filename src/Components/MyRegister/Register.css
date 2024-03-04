@@ -9,7 +9,7 @@ body.register-background {
   justify-content: center;
   height: 100vh;
   margin: 0;
-  background-image: url("https://images.freeimages.com/images/large-previews/7be/sunset-1369613.jpg?fmt=webp&w=500");
+  background-image: url("https://img2.secretchina.com/pic/2018/5-25/p2174891a849886097-ss.jpg");
   background-position: fixed;
   background-size: cover;
 }
@@ -171,4 +171,43 @@ ask-to-signin-link a:hover {
   position: fixed;
   width: 100%;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .the-whole-register-part {
+    width: 80%; /* Adjusted width for smaller screens */
+    height: auto; /* Adjusted height to accommodate content */
+    top: 40%; /* Adjusted position from top */
+    transform: translate(-50%, -40%); /* Adjusted transform */
+  }
+
+  .register-title {
+    font-size: 24px; /* Adjusted font size for smaller screens */
+  }
+
+  .signUpText {
+    font-size: 40px; /* Adjusted font size for smaller screens */
+  }
+
+  .register-inputRow input {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    height: 45px; /* Adjusted height for smaller screens */
+    margin-top: 20px; /* Adjusted margin top for smaller screens */
+  }
+
+  .register-button button {
+    font-size: 20px; /* Adjusted font size for smaller screens */
+    height: 50px; /* Adjusted height for smaller screens */
+    margin-top: 30px; /* Adjusted margin top for smaller screens */
+  }
+
+  .ask-to-signin-link {
+    font-size: 16px; /* Adjusted font size for smaller screens */
+    margin-top: 20px; /* Adjusted margin top for smaller screens */
+  }
+
+  .error {
+    font-size: 14px; /* Adjusted font size for smaller screens */
+    padding: 8px; /* Adjusted padding for smaller screens */
+  }
 }
