@@ -8,7 +8,7 @@ import Home from './Components/MyHome/Home';
 import Register from './Components/MyRegister/Register';
 import {useNavigate } from 'react-router-dom';
 import Transaction from './Components/MyTransaction/Transaction';
-import Performance from './Components/MyPerformance/Performance';
+import Formula from './Components/MyFormula/Formula';
 
  
  
@@ -75,7 +75,7 @@ function App() {
               <>
                 <Route path = "/" element={<Home handleLogout={handleLogout}/>} /> 
                 <Route path = "/Transaction" element={<Transaction />} /> 
-                <Route path = "/Performance" element={<Performance />} /> 
+                <Route path = "/Formula" element={<Formula />} /> 
                 
               </>
 

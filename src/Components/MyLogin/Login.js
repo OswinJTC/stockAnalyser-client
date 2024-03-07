@@ -29,7 +29,7 @@ const Login = ({ setIsLoggedIn, setLoggedUserName}) => {
   const handleLogin = async () => {
     try {
       setLoading(true);
-      const response = await api.post("/userApi/login", {
+      const response = await api.post("/userApi/userLogin", {
         username: username,
         password: password,
         

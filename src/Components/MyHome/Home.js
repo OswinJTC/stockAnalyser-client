@@ -61,7 +61,7 @@ const Home = ({ handleLogout }) => {
           </div>
 
           <div className="col-md-4">
-            <Link to="/Performance" className="buttonWithBackground2 btn btn-secondary btn-lg btn-block square-btn">
+            <Link to="/Formula" className="buttonWithBackground2 btn btn-secondary btn-lg btn-block square-btn">
               <div className="buttonContent">
                 <span style={{ fontFamily: 'serif', fontSize: '60px', fontWeight: 'bold', color: 'black' }}>獲利計算</span>
               </div>
