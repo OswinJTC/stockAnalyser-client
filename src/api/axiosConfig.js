@@ -1,7 +1,6 @@
 import axios from "axios";
-import config from "./config";
 
 export default axios.create({
-    baseURL: config.apiUrl,
+    baseURL: "http://18.136.213.130/",  
     headers: {"skip-browser-warning": "true"}
-}); 
+});
